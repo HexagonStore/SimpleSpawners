@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.meta.ItemMeta;
 
 public enum Mobs {
     ZOMBIE_PIGMAN("Porco Zombie", EntityType.PIG_ZOMBIE, "95fb2df754c98b742d35e7b81a1eeac9d37c69fc8cfecd3e91c67983516f"),
@@ -28,6 +29,16 @@ public enum Mobs {
     }
     public EntityType getBukkitType() {
         return bukkitType;
+    }
+    public ItemStack getSkull(Main plInstance){
+        String itemName = plInstance.getSpawnerName(this.displayName);
+        List<String> lore = plInstance.getLore(this.displayName);
+        ItemStack stack = SkullURL.getSkull(this.skullTexture);
+        ItemMeta meta = stack.getItemMeta();
+        meta.setDisplayName(itemName);
+        meta.setLore(lore);
+        stack.setItemMeta(meta);
+        return stack;
     }
     EntityType bukkitType;
     String skullTexture;
