@@ -5,9 +5,12 @@ import java.util.Arrays;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-
+import org.bukkit.entity.Player;
 public class GiveCommand implements CommandExecutor {
-
+    Main plugin;
+    public GiveCommand(Main pl){
+        plugin = pl;
+    }
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if(args.length == 0){
@@ -33,6 +36,8 @@ public class GiveCommand implements CommandExecutor {
             sender.sendMessage("Mobs disponiveis: ");
             sender.sendMessage(availableMobsBuilder.toString().split("\n"));
         }
+	Player player = (Player) sender;
+	player.getInventory().addItem(mob.getSkull(this.plugin));
         return true;
     }
     
