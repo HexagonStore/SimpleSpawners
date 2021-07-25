@@ -1,5 +1,8 @@
 package com.hexagon.spawners;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.bukkit.entity.EntityType;
 
 public enum Mobs {
@@ -23,5 +26,10 @@ public enum Mobs {
     private Mobs(String displayName, EntityType bukkitType) {
         this.displayName = displayName;
         this.bukkitType = bukkitType;
+    }
+    public static Mobs getByItemName(Main pluginInstance, String name){
+        
+        List<Mobs> valuesList = Arrays.asList(values()); 
+        return valuesList.stream().filter(mob-> pluginInstance.getSpawnerName(mob.displayName).equals(name)).findAny().orElse(null);
     }
 }
