@@ -22,6 +22,12 @@ public enum Mobs {
     PIG("Porco", EntityType.PIG),
     SHEEP("Ovelha", EntityType.SHEEP);
     String displayName;
+    public String getDisplayName() {
+        return displayName;
+    }
+    public EntityType getBukkitType() {
+        return bukkitType;
+    }
     EntityType bukkitType; 
     private Mobs(String displayName, EntityType bukkitType) {
         this.displayName = displayName;
