@@ -14,6 +14,7 @@ public class Main extends JavaPlugin
     @Override
     public void onEnable(){
         this.config = new BukkitConfig("spawners.yml", this);
+        getCommand("givespawner").setExecutor(new GiveCommand());
         Bukkit.getPluginManager().registerEvents(new EventListener(this), this);
         Bukkit.getConsoleSender().sendMessage("Plugin iniciado com sucesso!");
     }

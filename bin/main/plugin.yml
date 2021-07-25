@@ -1,4 +1,8 @@
 main: com.hexagon.spawners.Main
 name: "HexagonSpawners"
 version: "1.0"
+commands:
+  givespawners:
+    permission: hexagon.spawners.give
+    permission-message: "Você não tem permissão!"
 
