@@ -35,7 +35,8 @@ public class GiveCommand implements CommandExecutor {
             }
             sender.sendMessage("Mobs disponiveis: ");
             sender.sendMessage(availableMobsBuilder.toString().split("\n"));
-        }
+            return false;
+	}
 	Player player = (Player) sender;
 	player.getInventory().addItem(mob.getSkull(this.plugin));
         return true;

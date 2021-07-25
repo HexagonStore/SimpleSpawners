@@ -7,7 +7,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-
+import org.bukkit.inventory.ItemStack;
 public class EventListener implements Listener {
     Main pl;
     public EventListener(Main plInstance){
@@ -24,6 +24,11 @@ public class EventListener implements Listener {
         blockToSetSpawner.setType(Material.MOB_SPAWNER);
         CreatureSpawner spawnerState = (CreatureSpawner) blockToSetSpawner.getState();
         spawnerState.setSpawnedType(mob.getBukkitType());
-        
+	ItemStack stack = e.getPlayer().getInventory().getItemInHand();
+	stack.setAmount(stack.getAmount()-1);
+	if(stack.getAmount() == 0){
+	    stack.setType(Material.AIR);
+	}
+	e.getPlayer().getInventory().setItemInHand(stack);
     }
 }
