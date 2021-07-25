@@ -1,0 +1,4 @@
+main: com.hexagon.spawners.Main
+name: "HexagonSpawners"
+version: "1.0"
+
