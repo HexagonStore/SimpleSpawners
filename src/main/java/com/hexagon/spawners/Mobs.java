@@ -57,7 +57,7 @@ public enum Mobs {
     }
     public static Mobs valueOfSafe(String name){
         try {
-            return valueOf(name);
+            return valueOf(name.toUpperCase());
         } catch (Exception e) {
             return null;
         }
