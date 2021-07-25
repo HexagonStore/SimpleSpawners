@@ -6,10 +6,11 @@ import org.bukkit.Bukkit;
 
 public class Main extends JavaPlugin
 {
+    BukkitConfig config;
     @Override
     public void onEnable(){
+        this.config = new BukkitConfig("spawners.yml", this);
         
-        Bukkit.getConsoleSender().sendMessage("Plugin iniciado com sucesso!");
+        Bukkit.getConsoleSender().sendMessage("[HexagonSpawners] Plugin iniciado com sucesso!");
     }
-
 }
