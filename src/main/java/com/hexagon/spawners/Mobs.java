@@ -55,4 +55,11 @@ public enum Mobs {
         List<Mobs> valuesList = Arrays.asList(values()); 
         return valuesList.stream().filter(mob-> pluginInstance.getSpawnerName(mob.displayName).equals(name)).findAny().orElse(null);
     }
+    public static Mobs valueOfSafe(String name){
+        try {
+            return valueOf(name);
+        } catch (Exception e) {
+            return null;
+        }
+    }
 }
