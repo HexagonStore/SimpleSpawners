@@ -2,6 +2,8 @@ package com.hexagon.spawners;
 import org.bukkit.event.*;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.block.*;
+import org.bukkit.Material;
 public class SpawnerBreakListener implements Listener{
     Main pl;
     public SpawnerBreakListener(Main pl){
@@ -10,7 +12,7 @@ public class SpawnerBreakListener implements Listener{
     @EventHandler
     public void on(BlockBreakEvent e){
        Block breakedBlock = e.getBlock();
-       if(breakedBlock.getType() != Material.SPAWNER) return;
+       if(breakedBlock.getType() != Material.MOB_SPAWNER) return;
        if(!pl.getConfigWrapper().getConfig().getBoolean("pickaxe-requirements.silk-touch.enable")){
            return;
        }
