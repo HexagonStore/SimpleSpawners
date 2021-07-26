@@ -1,7 +1,7 @@
 package com.hexagon.spawners;
 
 import java.util.Arrays;
-
+import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -37,7 +37,7 @@ public class GiveCommand implements CommandExecutor {
             sender.sendMessage(availableMobsBuilder.toString().split("\n"));
             return false;
 	}
-	Player player = (Player) sender;
+	Player player = Bukkit.getPlayer(playerName);
 	player.getInventory().addItem(mob.getSkull(this.plugin));
         return true;
     }
