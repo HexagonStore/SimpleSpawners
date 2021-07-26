@@ -11,7 +11,7 @@ import org.bukkit.Bukkit;
 public class Main extends JavaPlugin
 {
     BukkitConfig config;
-    BukkitConfig getConfig(){
+    BukkitConfig getConfigWrapper(){
         return config;
     }
     @Override
