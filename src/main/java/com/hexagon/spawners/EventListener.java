@@ -15,6 +15,11 @@ public class EventListener implements Listener {
     }
     @EventHandler
     public void on(PlayerInteractEvent e){
+	if(e.getClickedBlock() == null) return;
+	if(e.getItem() == null) return;
+	if(!e.getItem().hasItemMeta()) return;
+	if(!e.getItem().getItemMeta().hasDisplayName()) return;
+
         Mobs mob = Mobs.getByItemName(pl, e.getItem().getItemMeta().getDisplayName());
         if(mob == null){
             return;
