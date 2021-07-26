@@ -6,3 +6,9 @@ pickaxe-requirements:
   silk-touch:
     enable: false
     min-level: 1
+    message: "Você precisa ter toque suave <level> pra quebrar esse spawner!"
+messages:
+  give-command:
+    mob-not-found: |
+      &cEsse mob não foi encontrado!
+      &eMobs disponiveis: 

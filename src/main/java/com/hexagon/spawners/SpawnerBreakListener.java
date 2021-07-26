@@ -20,7 +20,7 @@ public class SpawnerBreakListener implements Listener{
        
        if(e.getPlayer().getItemInHand().getEnchantmentLevel(Enchantment.SILK_TOUCH) < minLevel){
            e.setCancelled(true);
-           e.getPlayer().sendMessage("§cVocê precisa de toque suave de nivel "+minLevel+" para quebrar isso!");
+           e.getPlayer().sendMessage(pl.getConfigWrapper().getConfig().getString("pickaxe-requirements.silk-touch.message"));
        }
     }
 }
