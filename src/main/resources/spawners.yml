@@ -2,3 +2,7 @@ spawner:
   name: "Spawner de <mob>"
   lore:
     - "Este item, quando colocado no chão, começa a gerar <mob>s"
+pickaxe-requirements:
+  silk-touch:
+    enable: false
+    min-level: 1

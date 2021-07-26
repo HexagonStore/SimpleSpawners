@@ -14,7 +14,7 @@ public class SpawnerBreakListener implements Listener{
        if(!pl.getConfigWrapper().getConfig().getBoolean("pickaxe-requirements.silk-touch.enable")){
            return;
        }
-       int minLevel = pl.getConfigWrapper().getConfig().getInt("pickaxe-requirements.silk-touch.minLevel");
+       int minLevel = pl.getConfigWrapper().getConfig().getInt("pickaxe-requirements.silk-touch.min-level");
        
        if(e.getPlayer().getItemInHand().getEnchantmentLevel(Enchantment.SILK_TOUCH) < minLevel){
            e.setCancelled(true);
